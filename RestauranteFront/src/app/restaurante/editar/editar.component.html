@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">Cadastro de Restaurante</div>
+  <div class="card-body">
+    <form [formGroup]="formCadastro" *ngIf="restaurante">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" [(ngModel)]="restaurante.nome" formControlName="nome" placeholder="Digite o nome do restaurante"
+          required>
+        <small *ngIf="submetido && f.nome.errors" class="form-text text-danger"> Nome obrigatório</small>
+      </div>
+      <button type="button" class="btn btn-danger" [routerLink]="['/prato/']">
+        <span class="fa fa-arrow-circle-left" aria-hidden="true"> </span> Cancelar
+      </button>
+      <button type="button" class="btn btn-success" (click)="salvar()">
+        <span class="fa fa-save" aria-hidden="true"></span> Salvar
+      </button>
+    </form>
+  </div>
+</div>
